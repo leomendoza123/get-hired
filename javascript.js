@@ -9,7 +9,7 @@ var config = {
 firebase.initializeApp(config);
 
 var provider = new firebase.auth.GithubAuthProvider();
-provider.addScope("repo");
+provider.addScope("");
 
 provider.setCustomParameters({
   allow_signup: "false"
@@ -19,26 +19,14 @@ firebase
   .auth()
   .getRedirectResult()
   .then(function(result) {
-    console.log("AUTH RESULT", result);
-
     if (result.credential) {
-        
       var token = result.credential.accessToken;
-      console.log ("TOKEN ", token)
-      // ...
+      console.log("TOKEN ", token);
     }
     var user = result.user;
   })
   .catch(function(error) {
-    console.log("AUTH RESULT error ", error);
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // The email of the user's account used.
-    var email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
-    var credential = error.credential;
-    // ...
+    console.log(error);
   });
 
 firebase.auth().onAuthStateChanged(function(user) {
@@ -67,31 +55,75 @@ firebase.auth().onAuthStateChanged(function(user) {
         // Handle error
       });
   } else {
-    console.log("NO USER");
-
-    firebase
-      .auth()
-      .signInWithRedirect(provider)
-      .then(function(result) {
-        console.log(result);
-        // This gives you a GitHub Access Token. You can use it to access the GitHub API.
-        var token = result.credential.accessToken;
-        // The signed-in user info.
-        var user = result.user;
-        // ...
-      })
-      .catch(function(error) {
-        console.log(error);
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // The email of the user's account used.
-        var email = error.email;
-        // The firebase.auth.AuthCredential type that was used.
-        var credential = error.credential;
-        // ...
-      });
-
-    // ...
+    console.log(
+      "%c Hi there!  🇨🇷 👨‍💻",
+      "font-size: 30px; color: #61DAFB; background: black; font-family: sans-serif; padding: 15px"
+    );
+    console.log(
+      "\n" +
+        "\n" +
+        "This opportunity for a, Senior React developer.\n" +
+        "____________________\n" +
+        "\n" +
+        "\n" +
+        "This is what you get:\n" +
+        "- You will be hired as an employee (this is not just a contract)\n" +
+        "- You can choose between having an office on San Jose, San Carlos or Liberia\n" +
+        "- You have 4 days of work from home (if you want)\n" +
+        "- Private insurance\n" +
+        "- You might earn up to $4000 depending on your skills \n" +
+        "____________________\n" +
+        "\n" +
+        "\n" +
+        "What you need to prove: \n" +
+        "- You have an excellent English level\n" +
+        "- You are skillful in React \n" +
+        "____________________\n" +
+        "\n" +
+        "\n" +
+        "Call `moreInfo()` for more info\n"
+    );
   }
 });
+
+moreInfo = function() {
+  console.log(
+    "%c This is how you can apply:",
+    "font-size: 24px; color: #61DAFB; background: black; font-family: sans-serif; padding: 15px"
+  );
+  console.log(
+      "\n" +
+      "\n" +
+      "You will need to send an HTTP PUT request\n" +
+      "But first get your token\n" +
+      "\n" +
+      "\n" +
+      "You can do that by calling `getToken()`\n" +
+      "\n"
+  );
+};
+
+getToken = function() {
+  firebase
+    .auth()
+    .signInWithRedirect(provider)
+    .then(function(result) {
+      console.log(result);
+      // This gives you a GitHub Access Token. You can use it to access the GitHub API.
+      var token = result.credential.accessToken;
+      // The signed-in user info.
+      var user = result.user;
+      // ...
+    })
+    .catch(function(error) {
+      console.log(error);
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+      // ...
+    });
+};
