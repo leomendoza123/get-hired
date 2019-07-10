@@ -6,11 +6,13 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { environment } from 'src/environments/environment';
+import { ConsoleComponent } from './form/console/console.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ConsoleComponent
   ],
   imports: [
     BrowserModule,

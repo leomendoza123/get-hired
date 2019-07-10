@@ -7,7 +7,6 @@ export interface Answers {
 export interface Questions {
     id: string;
     value: string;
-    answers: [
-        Answers
-    ];
+    answers: Answers[]
+    ;  
 }

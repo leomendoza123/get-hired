@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { UserSignUpService } from './core/user-sign-up/user-sign-up.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +7,6 @@ import { UserSignUpService } from './core/user-sign-up/user-sign-up.service';
 })
 export class AppComponent {
   title = 'get-hire';
-  constructor(_userSignUp: UserSignUpService) {
-    
+  constructor() {
   }
 }
