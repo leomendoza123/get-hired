@@ -12,12 +12,15 @@ export class ConsoleComponent implements OnInit {
   questions: Questions[];
   
 
+
   constructor(private form: FormService) {
     window['start'] = () => this.start();
     window['answer'] = () => this.answer();
     window['getRandomElement'] = () => this.answer();
   }
 
+  ngOnInit(){
+  }
 
   start () {
     console.log ('...');
