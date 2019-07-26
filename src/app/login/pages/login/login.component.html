@@ -1,14 +1,15 @@
 <p>
   login works!
 
-  <app-phone></app-phone>
   <app-recaptcha 
-    [hidden]="captchaSolve" 
-    (newCaptcha)="declareCaptchaReference($event)" 
-    (captchaSolve)="captchaSolve = true" 
-    (captchaExpire)="captchaSolve = false"
-  ></app-recaptcha>
-  <button (click)="login()">LOGIN</button>
+  [hidden]="captchaState" 
+  (newCaptcha)="declareCaptchaReference($event)" 
+  (captchaSolve)="captchaSolve()" 
+  (captchaExpire)="captchaExpire()"
+></app-recaptcha>
+  <app-phone *ngIf="captchaState" (phoneNumber)="phoneNumber = $event"></app-phone>
+
+  <button *ngIf="phoneNumber" (click)="login()">LOGIN</button>
 
 
 </p>

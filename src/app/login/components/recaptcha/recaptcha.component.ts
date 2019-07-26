@@ -28,12 +28,12 @@ export class RecaptchaComponent implements OnInit {
       'size': 'normal',
       'callback': (response) => {
         console.log ('callback ', response)
-        this.captchaSolve.next()
+        this.captchaSolve.next(true)
       },
       'expired-callback': (response) => {
         console.log ('expired ', response)
 
-        this.captchaExpire.next()
+        this.captchaExpire.next(true)
       }
     });
   }
