@@ -1,0 +1,14 @@
+<p>
+  login works!
+
+  <app-phone></app-phone>
+  <app-recaptcha 
+    [hidden]="captchaSolve" 
+    (newCaptcha)="declareCaptchaReference($event)" 
+    (captchaSolve)="captchaSolve = true" 
+    (captchaExpire)="captchaSolve = false"
+  ></app-recaptcha>
+  <button (click)="login()">LOGIN</button>
+
+
+</p>

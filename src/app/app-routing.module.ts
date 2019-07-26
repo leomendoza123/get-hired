@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
 
 const routes: Routes = [
 
   {
   path: 'forms',
   loadChildren: './forms/forms.module#FormsModule',
+},
+{
+  path: 'login',
+  loadChildren: './login/login.module#LoginModule',
 },
 {
   path: '**',
