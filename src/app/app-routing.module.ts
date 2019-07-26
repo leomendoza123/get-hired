@@ -5,11 +5,11 @@ const routes: Routes = [
 
   {
   path: 'forms',
-  loadChildren: './forms/forms.module#FormsModule',
+  loadChildren: () => import('./forms/forms.module').then(m => m.FormsModule),
 },
 {
   path: 'login',
-  loadChildren: './login/login.module#LoginModule',
+  loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
 },
 {
   path: '**',
