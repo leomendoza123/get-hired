@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormService } from 'src/app/core/form/form.service';
-import { Questions } from 'src/app/types';
+import { Question } from 'src/app/types';
 
 @Component({
   selector: 'app-console',
@@ -9,7 +9,7 @@ import { Questions } from 'src/app/types';
 })
 export class ConsoleComponent implements OnInit {
 
-  questions: Questions[];
+  questions: Question[];
   
 
 
@@ -24,7 +24,7 @@ export class ConsoleComponent implements OnInit {
 
   start () {
     console.log ('...');
-    this.form.getQuestions('angular').subscribe((data: Questions[]) => {
+    this.form.getQuestions('angular').subscribe((data: Question[]) => {
       console.log ('OK we are ready!');
       console.log (data);
     });

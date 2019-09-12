@@ -44,7 +44,6 @@ export class PhoneComponent implements OnInit {
     } else {
       this.phoneNumber.emit(null)
     }
-    
   })
   }
 
