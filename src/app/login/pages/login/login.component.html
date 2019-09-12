@@ -3,7 +3,7 @@
 
   <app-recaptcha 
   [hidden]="captchaState" 
-  (newCaptcha)="declareCaptchaReference($event)" 
+  (newCaptcha)="_ls.declareCaptchaReference($event)" 
   (captchaSolve)="captchaSolve()" 
   (captchaExpire)="captchaExpire()"
 ></app-recaptcha>

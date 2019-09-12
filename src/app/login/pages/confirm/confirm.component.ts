@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { PhoneValidator } from '../../components/phone/phone.validator';
+import { LoginService } from 'src/app/core/login/login.service';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -26,9 +27,14 @@ export class ConfirmComponent implements OnInit {
   ]});
   matcher = new MyErrorStateMatcher();
 
-  constructor() { }
+  constructor(public _ls: LoginService) { }
 
   ngOnInit() {
+  }
+
+  confirm() {
+    this._ls.confirmPhoneNumber(this.confirmationNumber.value)
+
   }
 
 }
