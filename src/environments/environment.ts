@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyD6Y0cUIctWUs_FS5xF47ad_kB2YLTtjTs",
-    authDomain: "mendoza-5df86.firebaseapp.com",
-    databaseURL: "https://mendoza-5df86.firebaseio.com",
-    projectId: "mendoza-5df86",
-    storageBucket: "mendoza-5df86.appspot.com",
-    messagingSenderId: "137361639329",
-    appId: "1:137361639329:web:e7ff5cb6864d1322"
+    apiKey: "AIzaSyAsyFlYCpkm8U3fH33kJnFu289VhoRBV2w",
+    authDomain: "get-hired-516c2.firebaseapp.com",
+    databaseURL: "https://get-hired-516c2.firebaseio.com",
+    projectId: "get-hired-516c2",
+    storageBucket: "get-hired-516c2.appspot.com",
+    messagingSenderId: "863848021647",
+    appId: "1:863848021647:web:b48589b166945a0a"
   }
 };
 
