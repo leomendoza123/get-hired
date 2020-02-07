@@ -8,14 +8,14 @@ import { TEST_QUESTIONS } from "./test-data";
 })
 export class FormAdminService {
   constructor(private db: AngularFirestore) {
-    /// this.addQuestion(TEST_QUESTIONS)
+    //this.addQuestion(TEST_QUESTIONS);
   }
 
   addQuestion(temp: Question[]) {
-    temp.forEach(x => {
+    temp.forEach(question => {
       this.db
-        .collection("/campaign/react-angular/tests/angular/questions")
-        .add(x)
+        .collection("/campaign/avantica/test/angular/question")
+        .add(question)
         .then(data => {
           console.log(data);
         });

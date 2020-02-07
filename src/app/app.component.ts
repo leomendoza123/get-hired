@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { FirebaseuiAngularLibraryService } from 'firebaseui-angular';
 import * as firebase from 'firebase';
 import { UserService } from './core/user/user.service';
+import { FormAdminService } from './core/form-admin/form-admin.service';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,6 @@ import { UserService } from './core/user/user.service';
 export class AppComponent {
   title = 'get-hire';
 
-  constructor() {
+  constructor(_fas: FormAdminService) {
   }
 }

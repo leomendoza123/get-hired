@@ -11,6 +11,7 @@ export class PhoneValidator {
           const region = 'CR';
           const pNumber = phoneUtil.parseAndKeepRawInput(phoneNumber, region);
           const isValidNumber = phoneUtil.isValidNumber(pNumber);
+          console.log (phoneNumber, isValidNumber)
           if (isValidNumber) {
             return undefined;
           } else {
